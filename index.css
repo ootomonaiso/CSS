@@ -1,0 +1,36 @@
+/* 基本のリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* タイルの元締め */
+.tile-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* 初期は3列 */
+    gap: 10px;
+    padding: 20px;
+    width: max-content; 
+}
+
+/* タイル自体のデザイン */
+.tile {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+}
+
+/* 画面サイズが900px以下 → 2列 */
+@media (max-width: 900px) {
+    .tile-container {
+        grid-template-columns: repeat(2, 100px); /* 2列 */
+    }
+}
+
+/* 画面サイズが600px以下 → 1列 */
+@media (max-width: 600px) {
+    .tile-container {
+        grid-template-columns: repeat(1, 100px); /* repeat(1回繰り返す,1列の幅は100px) */
+    }
+}
